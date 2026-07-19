@@ -49,7 +49,7 @@ a {
 }
 
 .container {
-  width: min(1160px, 92vw);
+  width: min(1360px, 96vw);
   margin: 0 auto;
 }
 
@@ -98,22 +98,35 @@ a {
   animation-duration: 22s;
 }
 
-.grid-noise {
+.ledger-lines {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(43, 32, 24, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(43, 32, 24, 0.05) 1px, transparent 1px);
-  background-size: 36px 36px;
+    repeating-linear-gradient(
+      to bottom,
+      rgba(43, 32, 24, 0.06) 0,
+      rgba(43, 32, 24, 0.06) 1px,
+      transparent 1px,
+      transparent 29px
+    ),
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent 63px,
+      rgba(178, 90, 62, 0.22) 63px,
+      rgba(178, 90, 62, 0.22) 64px,
+      transparent 64px,
+      transparent 100%
+    );
   -webkit-mask-image: radial-gradient(
     circle at center,
-    rgba(0, 0, 0, 0.65),
-    transparent 80%
+    rgba(0, 0, 0, 0.55),
+    transparent 82%
   );
   mask-image: radial-gradient(
     circle at center,
-    rgba(0, 0, 0, 0.65),
-    transparent 80%
+    rgba(0, 0, 0, 0.55),
+    transparent 82%
   );
 }
 
@@ -148,22 +161,24 @@ a {
   gap: 0.85rem;
 }
 
-.brand-mark {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  box-shadow: 0 8px 18px rgba(92, 69, 48, 0.4);
+.brand-logo {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 10px;
+  border: 1px solid rgba(43, 32, 24, 0.12);
+  background: #f7f2e8;
+  padding: 0.15rem;
+  box-shadow: 0 10px 20px rgba(92, 69, 48, 0.18);
+  flex-shrink: 0;
 }
 
 .brand-text {
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .main-nav {
@@ -197,6 +212,10 @@ a {
 .main-nav a.active::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.main-nav a.btn {
+  color: #fff;
 }
 
 .menu-toggle {
@@ -251,12 +270,29 @@ a {
 }
 
 .hero {
+  position: relative;
+  isolation: isolate;
   padding-top: 3.2rem;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -8%;
+  right: -6%;
+  width: 560px;
+  height: 560px;
+  background: url("logo1.jpeg") center / cover no-repeat;
+  filter: grayscale(1) contrast(0.9);
+  opacity: 0.07;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 40px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 2rem;
   align-items: stretch;
 }
@@ -287,27 +323,30 @@ a {
   gap: 0.8rem;
 }
 
-.hero-stats {
-  margin-top: 2.1rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.7rem;
+.trust-band {
+  padding-bottom: 1.3rem;
 }
 
-.hero-stats article {
-  padding: 1rem;
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.trust-item {
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: rgba(250, 248, 243, 0.65);
+  background: rgba(250, 248, 243, 0.76);
+  padding: 1rem;
 }
 
-.hero-stats strong {
+.trust-item strong {
   display: block;
   font-size: 1.8rem;
   font-family: "Cormorant Garamond", Georgia, serif;
 }
 
-.hero-stats span {
+.trust-item span {
   color: var(--ink-soft);
   font-size: 0.78rem;
 }
@@ -388,6 +427,33 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: start;
+}
+
+.about-split {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.about-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.75),
+    rgba(251, 246, 236, 0.95)
+  );
+  padding: 1.35rem;
+}
+
+.about-card h3 {
+  font-size: 1.75rem;
+}
+
+.about-card p {
+  margin-top: 0.55rem;
+  color: var(--ink-soft);
 }
 
 .section-head h2 {
@@ -691,6 +757,8 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .about-split,
+  .trust-grid,
   .card-grid,
   .value-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -746,8 +814,18 @@ a {
     padding: 4.3rem 0;
   }
 
-  .hero-stats {
+  .trust-grid,
+  .about-split {
     grid-template-columns: 1fr;
+  }
+
+  .brand-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .brand-text {
+    font-size: 0.85rem;
   }
 
   .card-grid,

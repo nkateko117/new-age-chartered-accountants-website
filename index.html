@@ -15,19 +15,24 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/jpeg" href="logo1.jpeg" />
   </head>
   <body>
     <div class="site-bg" aria-hidden="true">
       <span class="orb orb-1"></span>
       <span class="orb orb-2"></span>
       <span class="orb orb-3"></span>
-      <span class="grid-noise"></span>
+      <span class="ledger-lines"></span>
     </div>
 
     <header class="topbar" id="top">
       <div class="container nav-wrap">
         <a class="brand" href="#top" aria-label="New Age Chartered Accountants">
-          <span class="brand-mark">NA</span>
+          <img
+            class="brand-logo"
+            src="logo1.jpeg"
+            alt="New Age Chartered Accountants logo"
+          />
           <span class="brand-text">New Age Chartered Accountants</span>
         </a>
 
@@ -54,72 +59,86 @@
     </header>
 
     <main>
-      <section class="hero section-pad">
+      <section class="hero section-pad" id="home">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow">Chartered Accountants + Data Scientists</p>
-            <h1>Financial clarity built for modern businesses.</h1>
+            <p class="eyebrow">New Age Chartered Accountants</p>
+            <h1>Insight that drives success.</h1>
             <p class="lead">
-              We partner with individuals and small businesses to unlock growth
-              through accounting, tax, advisory, and data-driven strategy.
+              Your trusted financial partner for individuals and small
+              businesses, combining accounting, tax, advisory, and data-driven
+              strategy to build lasting value.
             </p>
             <div class="hero-cta">
               <a href="#contact" class="btn">Book Consultation</a>
-              <a href="#services" class="btn btn-ghost">Explore Services</a>
-            </div>
-            <div class="hero-stats" aria-label="Highlights">
-              <article>
-                <strong data-counter="7">0</strong>
-                <span>Core Services</span>
-              </article>
-              <article>
-                <strong data-counter="3">0</strong>
-                <span>Featured Clients</span>
-              </article>
-              <article>
-                <strong data-counter="100">0</strong>
-                <span>Commitment to Precision</span>
-              </article>
+              <a href="#services" class="btn btn-ghost">Our Services</a>
             </div>
           </div>
 
           <aside
             class="hero-panel reveal-delay"
-            aria-label="Service focus preview"
+            aria-label="Strategic highlights"
           >
-            <h2>Built for Value Creation</h2>
+            <h2>Clarity. Compliance. Confidence.</h2>
             <ul>
-              <li>Commercial strategy and data-backed decisions</li>
-              <li>SARS compliance and tax optimization</li>
-              <li>Financial reporting that drives action</li>
-              <li>Internal controls for resilient operations</li>
+              <li>Chartered accounting expertise with modern insight</li>
+              <li>Precision tax and statutory compliance support</li>
+              <li>Actionable business advisory and value creation</li>
+              <li>Reliable reporting for confident decisions</li>
             </ul>
             <div class="panel-foot">
               <span class="pulse"></span>
-              Trusted, tailored, and future-ready.
+              Professional. Personal. Proactive.
             </div>
           </aside>
         </div>
       </section>
 
+      <section class="trust-band">
+        <div class="container trust-grid" aria-label="Highlights">
+          <article class="trust-item reveal">
+            <strong data-counter="7">0</strong>
+            <span>Core Service Lines</span>
+          </article>
+          <article class="trust-item reveal-delay">
+            <strong data-counter="1">0</strong>
+            <span>Dedicated Director</span>
+          </article>
+          <article class="trust-item reveal">
+            <strong data-counter="100">0</strong>
+            <span>Commitment to Precision</span>
+          </article>
+          <article class="trust-item reveal-delay">
+            <strong data-counter="2">0</strong>
+            <span>Countries of Experience</span>
+          </article>
+        </div>
+      </section>
+
       <section id="about" class="section-pad">
-        <div class="container two-col">
+        <div class="container">
           <div class="section-head reveal">
             <p class="eyebrow">About Us</p>
             <h2>Partners in compliance, confidence, and long-term growth.</h2>
           </div>
-          <div class="about-body reveal-delay">
-            <p>
-              We are a team of Chartered Accountants and Data Scientists united
-              by one mission: helping people and businesses create measurable
-              value through strategic finance, smart systems, and modern
-              insight.
-            </p>
-            <p>
-              Our approach combines deep professional expertise with practical
-              technology and analytics, so your business is not only compliant
-              today, but positioned for tomorrow.
-            </p>
+          <div class="about-split">
+            <article class="about-card reveal">
+              <h3>Who We Are</h3>
+              <p>
+                We are a team of Chartered Accountants and Data Scientists
+                united by one mission: helping people and businesses create
+                measurable value through strategic finance, smart systems, and
+                modern insight.
+              </p>
+            </article>
+            <article class="about-card reveal-delay">
+              <h3>How We Work</h3>
+              <p>
+                Our approach combines deep professional expertise with practical
+                technology and analytics, so your business is not only compliant
+                today, but positioned for tomorrow.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -311,7 +330,7 @@
         <div class="container contact-wrap">
           <div class="contact-copy reveal">
             <p class="eyebrow">Contact</p>
-            <h2>Let us build your next phase of growth.</h2>
+            <h2>Ready to move your business forward?</h2>
             <p>
               Share your business needs and we will tailor a practical roadmap
               across accounting, tax, and advisory.
