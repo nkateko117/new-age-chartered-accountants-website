@@ -226,7 +226,7 @@
                   >neswiswakhuliso@gmail.com</a
                 >
                 <span aria-hidden="true">&middot;</span>
-                <a href="tel:+27661476116">066 147 6116</a>
+                <a href="tel:+27661476116">(+27) 66 147 6116</a>
               </p>
               <p>
                 Khuliso Neswiswa CA(SA) is a qualified Chartered Accountant and
@@ -346,7 +346,7 @@
           </div>
           <form
             class="contact-form reveal-delay"
-            action="https://formspree.io/f/yourFormId"
+            action="https://formsubmit.co/neswiswakhuliso@gmail.com"
             method="post"
             aria-label="Contact form"
           >
@@ -355,15 +355,21 @@
               name="_subject"
               value="New enquiry - New Age Chartered Accountants"
             />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
             <input
               type="text"
-              name="_gotcha"
+              name="_honey"
               tabindex="-1"
               autocomplete="off"
               hidden
             />
+            <p class="form-guidance">
+              Please complete the fields below. Each field is marked as
+              <strong>Mandatory</strong> or <strong>Optional</strong>.
+            </p>
             <label>
-              Full Name
+              Full Name *
               <input
                 type="text"
                 name="name"
@@ -372,7 +378,7 @@
               />
             </label>
             <label>
-              Email Address
+              Email Address *
               <input
                 type="email"
                 name="email"
@@ -381,7 +387,17 @@
               />
             </label>
             <label>
-              Service Interest
+              Contact Number
+              <input
+                type="tel"
+                name="phone"
+                placeholder="e.g. +27 66 147 6116"
+                inputmode="tel"
+                autocomplete="tel"
+              />
+            </label>
+            <label>
+              Service Interest *
               <select name="service" required>
                 <option value="" disabled selected>Select a service</option>
                 <option>Bookkeeping Services</option>
@@ -390,10 +406,11 @@
                 <option>Financial Reporting</option>
                 <option>Advisory</option>
                 <option>Internal Controls</option>
+                <option>Other (Please specify below)</option>
               </select>
             </label>
             <label>
-              Message
+              Message *
               <textarea
                 name="message"
                 rows="4"
@@ -415,6 +432,10 @@
         </p>
         <a href="#top" class="to-top">Back to top</a>
       </div>
+      <!-- Developer credit (hidden from page view; visible in Inspect Element) -->
+      <p hidden data-developer-credit>
+        Developer: Nkateko Maluleke | GitHub: https://github.com/nkateko117
+      </p>
     </footer>
 
     <script src="script.js"></script>
